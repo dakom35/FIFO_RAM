@@ -1,0 +1,46 @@
+#My_do_file to make auto compilation and simulation
+# Execute this file by tiping "Do My_do_file.txt" in the command. 
+
+#Compilation 
+
+vcom myLibrary.vhd
+#vcom mes_composants.vhd
+
+vcom counter_up_down.vhd
+vcom counter_up_down_tb.vhd
+
+vcom genadr.vhd
+vcom genadr_tb.vhd
+
+vcom genhl.vhd
+vcom genhl_tb.vhd
+
+vcom ramMxN.vhd
+vcom ramMxN_tb.vhd
+
+vcom Fastslow.vhd
+vcom fastslow_tb.vhd
+
+vcom sequencer.vhd 
+vcom sequencer_tb.vhd 
+
+
+
+#################### Launching of the simulator #####################################
+
+#vsim work.counter_up_down_tb
+#vsim work.genadr_tb
+#vsim work.ramMxN_tb
+#vsim work.fastslow_tb
+#vsim work.sequencer_tb
+
+######################### Ajout des signaux à observer ###############################
+
+#add wave -position insertpoint sim:/counter_up_down_tb/*
+#add wave -position insertpoint sim:/genadr_tb/*
+#add wave -position insertpoint sim:/ramMxN_tb/*
+#add wave -position insertpoint sim:/fastslow_tb/*
+#add wave -position insertpoint sim:/sequencer_tb/*
+
+#Launching of the simulation
+run 200 ns
